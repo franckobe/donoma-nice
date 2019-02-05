@@ -1,15 +1,15 @@
 <template>
   <div>
-    <NavBar />
+    <NavBar titre="Mes favoris" />
     <BottomBar />
 
     <ul class="list-group">
-      <li class="list-group-item">
-        <router-link to="">
-          <img src="../assets/images/promenade.jpeg" alt="img" />
+      <li class="list-group-item" v-for="(lieu, index) in lieux">
+        <router-link :to="{name: 'lieu', params: {index: index}}">
+          <img :src="lieu.img" alt="img" />
           <div class="list-text">
-            <span class="titre">Promenade des Anglais</span>
-            <span class="categorie">Attraction incontournable</span>
+            <span class="titre">{{ lieu.nom }}</span>
+            <span class="categorie">{{ lieu.categorie }}</span>
           </div>
         </router-link>
       </li>
@@ -27,8 +27,12 @@
         components: {NavBar, BottomBar},
         data() {
             return {
-
+                lieux: [],
             }
+        },
+        created() {
+            const parentLieux = this.$parent.lieux;
+            this.lieux = parentLieux.filter(lieu => lieu.favoris);
         },
     }
 

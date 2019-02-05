@@ -5,30 +5,12 @@
     <BottomBar />
 
     <ul class="list-group">
-      <li class="list-group-item">
-        <router-link to="">
-          <img src="../assets/images/promenade.jpeg" alt="img" />
+      <li class="list-group-item" v-for="(lieu, index) in lieux">
+        <router-link :to="{name: 'lieu', params: {index: index}}">
+          <img :src="lieu.img" alt="img" />
           <div class="list-text">
-            <span class="titre">Promenade des Anglais</span>
-            <span class="categorie">Attraction incontournable</span>
-          </div>
-        </router-link>
-      </li>
-      <li class="list-group-item">
-        <router-link to="">
-          <img src="../assets/images/massena.jpg" alt="img" />
-          <div class="list-text">
-            <span class="titre">Place Massena</span>
-            <span class="categorie">Patrimoine et culture</span>
-          </div>
-        </router-link>
-      </li>
-      <li class="list-group-item">
-        <router-link to="">
-          <img src="../assets/images/marche2.jpg" alt="img" />
-          <div class="list-text">
-            <span class="titre">Marché artisanal nocture</span>
-            <span class="categorie">Shopping</span>
+            <span class="titre">{{ lieu.nom }}</span>
+            <span class="categorie">{{ lieu.categorie }}</span>
           </div>
         </router-link>
       </li>
@@ -47,8 +29,11 @@ export default {
   components: {NavBar, BottomBar},
   data() {
       return {
-
+        lieux: [],
       }
+  },
+  created() {
+      this.lieux = this.$parent.lieux;
   },
 }
 </script>

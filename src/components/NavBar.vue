@@ -6,11 +6,15 @@
             <span></span>
             <span></span>
         </div>
-        <div class="search-btn">
+        <div class="left-btn" v-if="backbutton" @click="goBack">
+            <img src="../assets/icons/arrow-left.png" alt="" />
+        </div>
+        <div class="left-btn" v-else>
             <img src="../assets/search.png" alt="" />
         </div>
         <div class="logo">
-            <img src="../assets/logo_nice.png" alt="Logo" />
+            <span v-if="titre && titre !== ''">{{ titre }}</span>
+            <img src="../assets/logo_nice.png" alt="Logo" v-else />
         </div>
         <ul class="side-menu" :class="menuOpened ? 'opened' : ''">
             <li class="top">
@@ -61,6 +65,16 @@
 <script>
     export default {
         name: "NavBar",
+        props: {
+            backbutton: {
+                default: false,
+                type: Boolean
+            },
+            titre: {
+                default: '',
+                type: String
+            }
+        },
         data() {
             return {
                 menuOpened: false,
@@ -70,6 +84,9 @@
         methods: {
             closeMenu() {
                 this.menuOpened = false;
+            },
+            goBack() {
+                this.$router.go(-1);
             }
         }
     }
@@ -117,6 +134,10 @@
 
         .logo {
             text-align: center;
+            height: 60px;
+            line-height: 60px;
+            font-size: 1.1em;
+            font-weight: bold;
         }
         img {
             height: 60px;
@@ -207,7 +228,8 @@
                     padding: 5px 10px;
                 }
                 a.router-link-exact-active {
-                    color: #009fe3;
+                    // color: #009fe3;
+                    font-weight: bold;
                 }
             }
 
@@ -267,10 +289,10 @@
             }
         }
 
-        .search-btn {
+        .left-btn {
             position: absolute;
-            left: 40px;
-            top: 40px;
+            left: 35px;
+            top: 35px;
             img {
                 height: 24px;
                 cursor: pointer;

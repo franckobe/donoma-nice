@@ -1,6 +1,6 @@
 <template>
     <div>
-        <NavBar />
+        <NavBar titre="Convertisseur de devises" />
         <BottomBar />
 
         <div class="top">

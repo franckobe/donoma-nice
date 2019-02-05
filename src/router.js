@@ -12,6 +12,7 @@ import Navettes from "./views/Navettes";
 import CarteGuide from "./views/CarteGuide";
 import QRCode from "./views/QRCode";
 import APropos from "./views/APropos";
+import Lieu from "./views/Lieu";
 
 Vue.use(Router);
 
@@ -37,7 +38,8 @@ export default new Router({
         {
             path: '/mon-sejour',
             name: 'mon-sejour',
-            component: MonSejour
+            component: MonSejour,
+            props: true
         },
         {
             path: '/profil',
@@ -45,6 +47,12 @@ export default new Router({
             component: Profil
         },
 
+        {
+            path: '/lieu',
+            name: 'lieu',
+            component: Lieu,
+            props: true
+        },
 
         {
             path: '/inspirations',

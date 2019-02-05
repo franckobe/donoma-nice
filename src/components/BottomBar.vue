@@ -78,7 +78,8 @@
                     text-transform: uppercase;
                 }
                 a.router-link-exact-active {
-                    color: #009fe3;
+                    // color: #009fe3;
+                    font-weight: bold;
                 }
             }
             li:not(:last-child)::after {
