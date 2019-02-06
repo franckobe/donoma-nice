@@ -28,6 +28,7 @@
                       coordonnees: 'https://www.google.fr/maps/place/197+Prom.+des+Anglais,+06200+Nice/@43.6868201,7.2355243,17z/data=!3m1!4b1!4m5!3m4!1s0x12cdd044a520e6bf:0x29a7a6881bf8188f!8m2!3d43.6868201!4d7.237713',
                       temps: '2-3 heures',
                       nbVisites: '11 millions de touristes chaque année',
+                      hashtags: '#Visite #vue #mer',
                       favoris: true,
                   },
                   {
@@ -45,7 +46,7 @@
                       coordonnees: 'https://www.google.fr/maps/place/Place+Massena,+Nice/@43.6972089,7.2684123,17z/data=!3m1!4b1!4m5!3m4!1s0x12cddaa161703019:0x4069c261780c67c!8m2!3d43.697205!4d7.2705956',
                       temps: '1-2 heures',
                       nbVisites: '11 millions de touristes chaque année',
-                      hashtags: '#Visite #vue #mer',
+                      hashtags: '#Visite #Bar #Place',
                       favoris: false,
                   },
                   {
@@ -60,7 +61,7 @@
                       coordonnees: 'https://www.google.fr/maps/place/Cours+Saleya,+06300+Nice/@43.6956109,7.2727394,17z/data=!3m1!4b1!4m5!3m4!1s0x12cddaa320b7663b:0xc17d02743fe180be!8m2!3d43.695607!4d7.2749227',
                       temps: '1-2 heures',
                       nbVisites: '1 millions de touristes chaque année',
-                      hashtags: '#Visite #vue #mer',
+                      hashtags: '#Visite #Shopping #Marche',
                       favoris: false,
                   }
               ],
@@ -82,7 +83,7 @@
                               coordonnees: 'https://www.google.fr/maps/place/Place+Massena,+Nice/@43.6972089,7.2684123,17z/data=!3m1!4b1!4m5!3m4!1s0x12cddaa161703019:0x4069c261780c67c!8m2!3d43.697205!4d7.2705956',
                               temps: '1-2 heures',
                               nbVisites: '11 millions de touristes chaque année',
-                              hashtags: '#Visite #vue #mer',
+                              hashtags: '#Visite #Bar #Place',
                               favoris: false,
                           },
                           {
@@ -97,10 +98,10 @@
                               coordonnees: 'https://www.google.fr/maps/place/Cours+Saleya,+06300+Nice/@43.6956109,7.2727394,17z/data=!3m1!4b1!4m5!3m4!1s0x12cddaa320b7663b:0xc17d02743fe180be!8m2!3d43.695607!4d7.2749227',
                               temps: '1-2 heures',
                               nbVisites: '1 millions de touristes chaque année',
-                              hashtags: '#Visite #vue #mer',
+                              hashtags: '#Visite #Shopping #Marche',
                               favoris: false,
                           },
-                      ]
+                      ],
                   ],
               }
           }
@@ -112,8 +113,12 @@
 </script>
 
 <style lang="scss">
+  * {
+    box-sizing: border-box;
+  }
   body {
     margin: 0;
+    background-color: #fff;
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -124,7 +129,7 @@
   }
   @media screen and (min-width: 993px) {
     main {
-      padding-bottom: 0;
+      padding: 141px 20% 0;
     }
   }
 </style>

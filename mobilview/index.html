@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Visitez Nice - Donoma Agency</title>
+    <link rel="stylesheet" href="./bootstrap-grid.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        iframe {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border: none;
+            box-sizing: border-box;
+        }
+        .text-center {
+            text-align: center;
+        }
+        @media screen and (min-width: 993px){
+            .iphone {
+                box-sizing: border-box;
+                position: relative;
+                background: url("iphone.jpg") no-repeat;
+                background-size: cover;
+                padding: 95px 20px;
+                width: 419px;
+                height: 869px;
+                margin: 0 auto;
+                transform: scale(0.8);
+            }
+            iframe {
+                box-sizing: border-box;
+                position: relative;
+                height: 100%;
+                width: 100%;
+                border: none;
+                margin: 0 auto;
+            }
+            img {
+                height: 200px;
+                margin-top: 75px;
+            }
+            ul {
+                list-style: none;
+            }
+            ul li {
+                margin: 10px 0;
+            }
+            ul li a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        function test() {
+            var isMobile = {
+                Android: function() {
+                    return navigator.userAgent.match(/Android/i);
+                },
+                BlackBerry: function() {
+                    return navigator.userAgent.match(/BlackBerry/i);
+                },
+                iOS: function() {
+                    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+                },
+                Opera: function() {
+                    return navigator.userAgent.match(/Opera Mini/i);
+                },
+                Windows: function() {
+                    return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+                },
+                any: function() {
+                    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+                }
+            };
+            if( isMobile.any() ) {
+                window.location.href = './site';
+            }
+        }
+    </script>
+
+</head>
+<body onload="test()">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 text-center">
+                <div class="iphone">
+                    <iframe src="https://donoma.fgarros.fr/nice/site"></iframe>
+                    <!--<iframe src="./site"></iframe>-->
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <div>
+                    <a href="https://donoma.fgarros.fr">
+                        <img src="./donoma.png" alt="Donoma" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://github.com/franckobe/donoma-nice">
+                        <img src="./github.jpg" alt="Github" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

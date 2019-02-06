@@ -48,7 +48,7 @@
         @media screen and (min-width: 993px) {
             position: fixed;
             border-bottom: solid 1px #eee;
-            top: 96px;
+            top: 90px;
             bottom: inherit;
         }
 
