@@ -5,10 +5,7 @@
 
         <div class="container">
             <p>
-                Ici seront présentées les différentes lignes de navettes que nous proposons.
-            </p>
-            <p>
-                Il sera possible de réserver en ligne, tous les types de navettes en fonction de l'itinéraire.
+                Ici seront présentées les différentes expositions de la ville.
             </p>
         </div>
 

@@ -2,7 +2,10 @@
     <div>
         <NavBar />
         <BottomBar />
-        <h1>Inspirations</h1>
+
+        <img :src="require('@/assets/captures/guide.png')"
+             alt="guide" />
+
     </div>
 </template>
 
@@ -17,5 +20,10 @@
 </script>
 
 <style scoped>
-
+    img {
+        z-index: 3;
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
 </style>

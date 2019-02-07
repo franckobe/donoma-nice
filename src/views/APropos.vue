@@ -3,7 +3,15 @@
         <NavBar />
         <BottomBar />
 
-        <h1>A propos</h1>
+        <div class="container">
+            <p>
+                Cette application est un prototype, les données ne sont pas réellement enregistrées.
+            </p>
+            <p>
+                Développé par Donoma Agency
+            </p>
+        </div>
+
     </div>
 </template>
 

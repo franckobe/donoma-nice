@@ -49,7 +49,7 @@
             <li><router-link to="navettes" @click.native="closeMenu">Navette à la demande</router-link></li>
             <li><router-link to="carte-guide" @click.native="closeMenu">Carte & guide</router-link></li>
             <li><router-link to="qr-code" @click.native="closeMenu">QR Code</router-link></li>
-            <li><router-link to="qr-code" @click.native="closeMenu">Exposition</router-link></li>
+            <li><router-link to="expositions" @click.native="closeMenu">Exposition</router-link></li>
             <li class="separator"></li>
             <li class="title">
                 L'application
@@ -57,7 +57,7 @@
             <li><router-link to="a-propos" @click.native="closeMenu">A propos</router-link></li>
             <li><router-link to="deconnexion">Déconnexion</router-link></li>
             <li class="separator"></li>
-            <li class="big"><router-link to="tell-my-city">Tell my city</router-link></li>
+            <li class="big"><router-link to="accueil">Tell my city</router-link></li>
         </ul>
     </div>
 </template>

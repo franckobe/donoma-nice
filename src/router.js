@@ -13,6 +13,7 @@ import CarteGuide from "./views/CarteGuide";
 import QRCode from "./views/QRCode";
 import APropos from "./views/APropos";
 import Lieu from "./views/Lieu";
+import Expositions from "./views/Expositions";
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
     routes: [
         {
             path: '/',
+            name: 'root',
+            component: Accueil
+        },
+        {
+            path: '/accueil',
             name: 'accueil',
             component: Accueil
         },
@@ -85,6 +91,12 @@ export default new Router({
             path: '/qr-code',
             name: 'qr-code',
             component: QRCode
+        }
+        ,
+        {
+            path: '/expositions',
+            name: 'expositions',
+            component: Expositions
         }
         ,
         {
