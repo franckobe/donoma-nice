@@ -10,15 +10,23 @@
                  v-for="(jour, index) in sejour.jours">
                 <span>Jour<br/>{{ index + 1 }}</span>
             </div>
-            <div class="plus" @click="sejour.jours.push({})">
+            <div class="plus" @click="ajouterJourSejour">
                 <span></span>
                 <span></span>
             </div>
         </div>
 
         <div class="sejour">
+            <div class="buttons" v-if="jourSelectionne > -1">
+                <div>
+                    Jour {{ jourSelectionne + 1 }}
+                </div>
+                <div @click="supprimerJour">
+                    Supprimer jour
+                </div>
+            </div>
             <div class="item" v-for="(lieu, index) in sejour.jours[jourSelectionne]">
-                <div class="nb">{{ index }}</div>
+                <div class="nb">{{ index + 1 }}</div>
                 <div class="top">
                     <router-link :to="{name: 'lieu', params: {index: index}}">
                         <img :src="lieu.img" alt="img" />
@@ -31,6 +39,14 @@
                 <div class="bottom">
                     <p><span>Temps :</span> {{ lieu.temps }}</p>
                     <p><span>Activités :</span> {{ lieu.hashtags }}</p>
+                    <div class="buttons">
+                        <div class="itineraire">
+                            Itinéraire
+                        </div>
+                        <div class="supprimer" @click="supprimerItem(index)">
+                            Supprimer
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,7 +65,7 @@
                     >
                         <span>Jour<br/>{{ index + 1 }}</span>
                     </div>
-                    <div class="plus" @click="sejour.jours.push({})">
+                    <div class="plus" @click="sejour.jours.push([])">
                         <span></span>
                         <span></span>
                     </div>
@@ -96,13 +112,17 @@
             this.sejour = this.$parent.sejour;
         },
         methods: {
+            ajouterJourSejour() {
+                this.sejour.jours.push([]);
+                this.jourSelectionne = this.sejour.jours.length - 1;
+            },
             selectionnerJour(index) {
                 this.jourAjout = index;
 
                 const vm = this;
-                const jours = this.sejour.jours[this.jourAjout];
-                for (let i=0; i<jours.length; i++) {
-                    if (jours[i].id === vm.lieuSelectionneAjout.id) {
+                const lieux = this.sejour.jours[this.jourAjout];
+                for (let i=0; i<lieux.length; i++) {
+                    if (lieux[i].id === vm.lieuSelectionneAjout.id) {
                         vm.error = true;
                         vm.btnAjouter = false;
                         return false;
@@ -118,12 +138,19 @@
                 this.error = false;
             },
             validerSelection() {
-                this.sejour.jours[this.jourSelectionne].push(this.lieuSelectionneAjout);
+                this.sejour.jours[this.jourAjout].push(this.lieuSelectionneAjout);
                 this.lieuSelectionneAjout = null;
                 this.jourAjout = -1;
                 this.btnAjouter = false;
                 this.error = false;
             },
+            supprimerItem(lieu) {
+                this.sejour.jours[this.jourSelectionne].splice(lieu,1);
+            },
+            supprimerJour() {
+                this.sejour.jours.splice(this.jourSelectionne,1);
+                this.jourSelectionne = this.jourSelectionne - 1;
+            }
         },
     }
 </script>
@@ -203,12 +230,28 @@
         height: 100%;
         width: calc(100% - 60px);
 
+        .buttons {
+            display: flex;
+
+            & > div {
+                flex-grow: 1;
+                padding: 5px 10px;
+            }
+            div:first-child {
+
+            }
+            div:last-child {
+                text-align: right;
+                color: #ff4641;
+            }
+        }
+
         .item {
             position: relative;
             border-bottom: solid 1px #000;
             border-left: solid 1px #000;
-            margin: 10px;
-            padding: 10px;
+            margin: 10px 10px 0 10px;
+            padding: 10px 10px 0 10px;
 
             .nb {
                 position: absolute;
@@ -262,6 +305,24 @@
                     font-size: 0.9em;
                     span {
                         font-weight: bold;
+                    }
+                }
+                div.buttons {
+                    display: flex;
+                    padding: 10px;
+                    text-align: center;
+
+                    & > div {
+                        flex-grow: 1;
+                        padding: 5px 0;
+                    }
+                    .supprimer {
+                        color: #ff4641;
+                    }
+                    .itineraire {
+                        background-color: #009fe3;
+                        color: #fff;
+                        border-radius: 5px;
                     }
                 }
             }

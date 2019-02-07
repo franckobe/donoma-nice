@@ -2,7 +2,10 @@
     <div>
         <NavBar />
         <BottomBar />
-        <h1>QR Code</h1>
+
+        <img :src="require('@/assets/captures/QRCode.png')"
+             alt="transports" />
+
     </div>
 </template>
 
@@ -17,5 +20,10 @@
 </script>
 
 <style scoped>
-
+    img {
+        z-index: 3;
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
 </style>

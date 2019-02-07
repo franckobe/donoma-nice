@@ -102,9 +102,29 @@
                               favoris: false,
                           },
                       ],
+                      [
+                          {
+                              id: 3,
+                              nom: 'Marché artisanal nocture',
+                              img: require('@/assets/images/marche2.jpg'),
+                              categorie: 'Shopping',
+                              description: 'Un marché d’artisanat estival nocturne qui anime le Cours Saleya de mi-mai à ' +
+                                  'mi-septembre. Pendant les rafraichissantes soirées d’été, admirez les bijoux, poteries ' +
+                                  'et peintures réalisés avec passion par des artisans niçois.',
+                              adresse: 'Cours Saleya, 06300 Nice',
+                              coordonnees: 'https://www.google.fr/maps/place/Cours+Saleya,+06300+Nice/@43.6956109,7.2727394,17z/data=!3m1!4b1!4m5!3m4!1s0x12cddaa320b7663b:0xc17d02743fe180be!8m2!3d43.695607!4d7.2749227',
+                              temps: '1-2 heures',
+                              nbVisites: '1 millions de touristes chaque année',
+                              hashtags: '#Visite #Shopping #Marche',
+                              favoris: false,
+                          },
+                      ],
                   ],
               }
           }
+      },
+      methods: {
+
       },
       created() {
 
