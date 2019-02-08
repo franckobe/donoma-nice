@@ -5,7 +5,6 @@ import Favoris from './views/Favoris.vue'
 import Monnaie from "./views/Monnaie";
 import MonSejour from "./views/MonSejour";
 import Inspirations from "./views/Inspirations";
-import Essentiel from "./views/Essentiel";
 import Profil from "./views/Profil";
 import TransportsPublics from "./views/TransportsPublics";
 import Navettes from "./views/Navettes";
@@ -64,11 +63,6 @@ export default new Router({
             path: '/inspirations',
             name: 'inspirations',
             component: Inspirations
-        },
-        {
-            path: '/essentiel',
-            name: 'essentiel',
-            component: Essentiel
         },
         {
             path: '/transports-publics',
